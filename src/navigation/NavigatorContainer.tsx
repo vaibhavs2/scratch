@@ -1,12 +1,14 @@
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { StackNavigator } from './StackNavigator';
+import {NavigationContainer} from '@react-navigation/native';
+import {StackNavigator} from './StackNavigator';
+import {ErrorBoundary} from '../ErrorBoundary';
 
 export function NavigatorContainer() {
   return (
-    <NavigationContainer>
-        <StackNavigator/>
-
-    </NavigationContainer>
+    <ErrorBoundary>
+      <NavigationContainer>
+        <StackNavigator />
+      </NavigationContainer>
+    </ErrorBoundary>
   );
 }
